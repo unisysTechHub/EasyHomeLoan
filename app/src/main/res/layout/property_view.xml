@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="property"
+            type="com.example.easyhomeloan.model.Property" />
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/property_layout"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/textViewHeader"
+                android:id="@+id/property_name"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text='@{property.propertyName, default ="Property Name" }'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/property_address"
+                style="@style/textViewAddress"
+                android:text='@{property.propertyAdd1, default= "Madhpur"}'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/property_address1"
+                style="@style/textViewAddress"
+                android:text='@{property.propertyAdd2, default= "Hyderabad"}'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/property_area_header"
+                    android:text=" Area"
+                    android:gravity="center"
+                    style="@style/textViewHiglight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView
+                    android:id="@+id/property_area"
+                    android:text='@{property.propertyareaMeasurement, default="2400 sqft" }'
+                    android:gravity="center"
+                    style="@style/textViewHiglight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/property_price_header"
+                        android:text=" Cost"
+                        android:gravity="center"
+                        style="@style/textViewHiglight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/property_price"
+                        android:text='@{property.propertyPrice, default="$ 2000"}'
+                        style="@style/textViewHiglight"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginTop="32dp"
+                android:id="@+id/property_image"
+                android:layout_width="match_parent"
+                android:src="@mipmap/property_image"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/red"
+        app:layout_constraintTop_toBottomOf="@+id/property_layout"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
